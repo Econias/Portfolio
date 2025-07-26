@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Econias'| Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #6c8fc7;
+            --dark: #2d2d2d;
+            --light: #f5f5f5;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --accent: #e0e0e0;
+            --card-bg: #3a3a3a;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="light"] {
+            --dark: #f5f5f5;
+            --light: #ffffff;
+            --text-dark: #333333;
+            --text-light: #2d2d2d;
+            --accent: #d0d0d0;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+       /* Updated Header Styles */
+.header {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(60, 60, 60, 0.9));
+}
+
+.profile-pic {
+    width: 180px; /* Slightly larger */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary);
+    box-shadow: 0 4px 20px rgba(74, 111, 165, 0.4);
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+    
+    .buttons {
+        justify-content: center;
+    }
+}
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(74, 111, 165, 0.3);
+        }
+
+        .header-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(74, 111, 165, 0.4);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(74, 111, 165, 0.6);
+        }
+
+        .outline-btn {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .outline-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .download-btn {
+            background: var(--primary);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Sections */
+        section {
+            padding: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            color: var(--text-light);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            color: var(--text-light);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: var(--card-bg);
+            color: var(--text-light);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Resume Download Section */
+        .resume-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: rgba(74, 111, 165, 0.1);
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            color: var(--text-light);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-content {
+            padding: 1.8rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: rgba(74, 111, 165, 0.2);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Canva Works */
+        .canva-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .canva-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: var(--card-bg);
+        }
+
+        .canva-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .canva-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .canva-caption {
+            padding: 1.2rem;
+        }
+
+        .canva-caption h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .canva-caption p {
+            color: var(--text-light);
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* Achievements & Certifications */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            color: var(--text-light);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Contact */
+        .contact-info {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: var(--text-light);
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--primary);
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: rgba(0,0,0,0.1);
+            margin-top: 3rem;
+            color: var(--text-light);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            background: rgba(0,0,0,0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background: rgba(0,0,0,0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+                padding: 2rem 0;
+            }
+            
+            .header-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+
+            .canva-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .canva-img {
+                height: 220px;
+            }
+        }
+        /* Add this at the end of your CSS file */
+img[src="pro.jpg"] {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--primary);
+    box-shadow: 0 5px 25px rgba(74, 111, 165, 0.5);
+}
+
+@media (max-width: 768px) {
+    img[src="pro.jpg"] {
+        width: 180px !important;
+        height: 180px !important;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+<header class="header">
+    <div class="container" style="display: flex; align-items: center; gap: 10rem;">
+        <!-- Profile Picture -->
+        <div style="flex: 0 0 auto;">
+            <img src="pro.jpg" alt="Econias E. Nigussie" 
+     style="width: 280px; height: 280px; border-radius: 50%; object-fit: cover; 
+            border: 6px solid var(--primary); box-shadow: 0 5px 25px rgba(74, 111, 165, 0.5);">
+        </div>
+
+        <!-- About Me-->
+        <div style="flex: 1;">
+            <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem; color: var(--text-light);">Econias E. Nigussie</h1>
+            <p class="subtitle">Innovator | Peace Ambassador | Tech Enthusiast</p>
+            
+            <!-- Short Bio -->
+            <div style="margin-top: 1.5rem; color: var(--text-light);">
+                <p>Graduated high school at Bashewam Secondary School from Addis Ababa, Ethiopia, passionate about technology, peacebuilding, and leadership. Certified in <strong>Data Analytics</strong> and <strong>Web Design</strong>.</p>
+                    <p>Participated in diverse team activities, enhancing communication skills and fostering teamwork. Completed multiple online courses, advancing proficiency in HTML/CSS and JavaScript. Developed strong data analytics capabilities through targeted learning initiatives.</p>
+                    
+            </div>
+            
+            <div class="skills" style="margin-top: 1.5rem;">
+                <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Data Analytics</span>
+                        <span class="skill-tag">Web Design</span>
+                        <span class="skill-tag">Project Planning</span>
+                        <span class="skill-tag">Analytical Thinking</span>
+                        <span class="skill-tag">Fluent English</span>
+                        <span class="skill-tag">Team Management</span>
+                        <span class="skill-tag">Leadership</span>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="buttons" style="margin-top: 1.5rem;">
+                <a href="#projects" class="btn primary-btn">View Projects</a>
+                <a href="#contact" class="btn outline-btn">Contact Me</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Activities</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <i class="fas fa-peace"></i>
+                    <h3>IEP Ambassador</h3>
+                    <p><strong>Institute for Economics and Peace | 2024</strong></p>
+                    <p>Represented Ethiopia among 140 countries, presenting innovative peacebuilding solutions. Completed peacebuilding course and earned ambassador recognition for creative policy ideas.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Student Council Member</h3>
+                    <p><strong>Bashewam School | 2023–present</strong></p>
+                    <p>Led 5+ administrative meetings and 10+ school/national events, amplifying student voices. Designed senior class uniform, blending style and school spirit.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Co-Founder & Game Designer</h3>
+                    <p><strong>Bashewam Charity Club | 2021–present</strong></p>
+                    <p>Created 12 interactive games to raise ~$1,000, engaging 200+ members. Supported 4 mothers to launch businesses through targeted fundraising.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>English Language Educator</h3>
+                    <p><strong>Fluent English 24 (Telegram) | 2023–present</strong></p>
+                    <p>Taught English to 130,000+ followers, boosting English skills by ~10% via 150+ quizzes, 300+ vocab lessons, and 50+ word clarifications.</p>
+                </div>
+
+                <div class="achievement-card">
+                    <i class="fas fa-church"></i>
+                    <h3>Membership Administrator</h3>
+                    <p><strong>Selassie Cathedral Gibe Gobaye | 2021–present</strong></p>
+                    <p>Organized weekly prayers, dramas, and poems for 100+ members. Coordinated 2 annual monastery trips for 60+ participants.</p>
+                </div>
+
+                <div class="achievement-card">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h3>Article Writer</h3>
+                    <p><strong>Rebuilding Ethiopia | 2024–2025</strong></p>
+                    <p>Published 8 articles on academic majors, inspiring students' educational pursuits. Provided resources to guide youth in career exploration.</p>
+                </div>
+
+                <div class="achievement-card">
+                    <i class="fas fa-cash-register"></i>
+                    <h3>Sales Assistant</h3>
+                    <p><strong>Family Shoe Retail | 2021–present</strong></p>
+                    <p>Streamlined sales and customer service, saving ~$100/year in labor costs. Freed up time for my parents to focus on other business aspects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="project-grid">
+                <!-- AI Learning Portal -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>AI Learning Portal</h3>
+                        <p>Developed an interactive AI-powered website to guide students through their study.</p>
+                        <div class="project-details" style="margin-top: 1rem;">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="https://nilenestt.netlify.app/" class="btn outline-btn" style="margin-top: 1rem;">Visit Website</a>
+                    </div>
+                </div>
+                
+                <!-- Tuseme Research -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Women Empowerment Research</h3>
+                        <p>Conducted field research with Tuseme organization on barriers to women's education in Ethiopia, proposing community-based solutions.</p>
+                        <div class="project-details" style="margin-top: 1rem;">
+                            <span class="tech-tag">Qualitative Research</span>
+                            <span class="tech-tag">Data Analysis</span>
+                  
+                        </div>
+                        <a href="ME.pdf" class="btn outline-btn" style="margin-top: 1rem;">Read Paper</a>
+                    </div>
+                </div>
+                
+               
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Charity Club Games</h3>
+                        <p>Created 12 interactive games that raised ~$1,000 for community initiatives, engaging 200+ members.</p>
+                        
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>English Teaching Platform</h3>
+                        <p>Built a Telegram channel teaching English to 130,000+ followers with 300+ vocabulary lessons and 150+ quizzes.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="canva" class="canva">
+        <div class="container">
+            <h2 class="section-title">My Creative Works</h2>
+            <div class="canva-grid">
+                <!-- Video Project -->
+                <div class="canva-item video-item">
+                    <div class="video-wrapper">
+                        <iframe width="100%" height="315" src="T.mp4" 
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="canva-caption">
+                        <h4>Advertisement</h4>
+                        <p>An Ad that I made for a new store called HE. It helped boost their business with its concise and clear presentation. </p>
+                    </div>
+                </div>
+
+               
+                <div class="canva-item">
+                    <img src="U.jpg" class="canva-img">
+                    <div class="canva-caption">
+                        <h4>Educational Infographic</h4>
+                        
+                    </div>
+                </div>
+
+                <div class="canva-item">
+                    <img src="Y.jpg" class="canva-img">
+                    <div class="canva-caption">
+                        <h4>Event Poster</h4>
+                    
+                    </div>
+                </div>
+
+                <div class="canva-item">
+                    <img src="X.jpg" class="canva-img">
+                    <div class="canva-caption">
+                        <h4>Educational Infographic</h4>
+              
+                    </div>
+                </div>
+                <div class="canva-item">
+                    <img src="V.jpg" class="canva-img">
+                    <div class="canva-caption">
+                        <h4>Educational Infographic</h4>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements & Certifications</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certifications</h3>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                        <li>Adobe Flash Pro Speed Design (Mindluster)</li>
+                        <li>My Digital World (Kemmcom through Meta)</li>
+                        <li>Responsive Web Design (FreeCodeCamp)</li>
+                        <li>Data Analytics Fundamentals (Udacity)</li>
+                    </ul>
+                </div>
+                
+                <div class="achievement-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Awards</h3>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                        <li>3rd Place, Sub-City Innovation Challenge (NileNest), 2024</li>
+                        <li>IEP Ambassador Recognition for Innovative Peace Building Solution, 2024</li>
+                    </ul>
+                </div>
+                
+                <div class="achievement-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Research</h3>
+                    <p style="margin-top: 1rem;">The potential of Okra in regulating and obtaining a desired sugar level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resume-section">
+        <div class="container">
+            <h2 class="section-title">My Resume</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-light);">Download my complete resume for more details</p>
+            <a href="Resume.pdf" download="Econias_Nigussie_Resume.pdf" class="btn download-btn">
+                <i class="fas fa-download"></i> Download Resume
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> econiasnigussie@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +251 0910354144</p>
+                <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
+                <div class="social-links">
+                    <a href="https://t.me/Eco_Es"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.linkedin.com/in/econias-nigussie-048627322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Econias"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Econias E. Nigussie. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
