@@ -53,14 +53,14 @@
             padding: 2rem 0;
         }
 
-       /* Updated Header Styles */
+       
 .header {
     padding: 3rem 0;
     background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(60, 60, 60, 0.9));
 }
 
 .profile-pic {
-    width: 180px; /* Slightly larger */
+    width: 180px;
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
@@ -173,7 +173,7 @@
             border-radius: 2px;
         }
 
-        /* About Section */
+        /* About */
         .about-content {
             display: flex;
             gap: 3rem;
@@ -203,7 +203,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* Resume Download Section */
+        /* Resume */
         .resume-section {
             text-align: center;
             padding: 3rem 0;
@@ -253,7 +253,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Canva Works */
+        /* Canva */
         .canva-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -313,7 +313,7 @@
             font-size: 0.95rem;
         }
 
-        /* Achievements & Certifications */
+        /* Achievements */
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -382,31 +382,7 @@
             margin-top: 3rem;
             color: var(--text-light);
         }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-            z-index: 100;
-            font-size: 1.5rem;
-            color: var(--text-light);
-            background: rgba(0,0,0,0.2);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .theme-toggle:hover {
-            background: rgba(0,0,0,0.3);
-        }
-
-        /* Responsive */
+        
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -436,7 +412,7 @@
                 height: 220px;
             }
         }
-        /* Add this at the end of your CSS file */
+    
 img[src="pro.jpg"] {
     width: 220px;
     height: 220px;
@@ -455,22 +431,21 @@ img[src="pro.jpg"] {
     </style>
 </head>
 <body>
-    <!-- Header Section -->
+    <!--Header-->
 <header class="header">
     <div class="container" style="display: flex; align-items: center; gap: 10rem;">
-        <!-- Profile Picture -->
+        
         <div style="flex: 0 0 auto;">
             <img src="pro.jpg" alt="Econias E. Nigussie" 
      style="width: 280px; height: 280px; border-radius: 50%; object-fit: cover; 
             border: 6px solid var(--primary); box-shadow: 0 5px 25px rgba(74, 111, 165, 0.5);">
         </div>
 
-        <!-- About Me-->
+        <!-- About -->
         <div style="flex: 1;">
             <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem; color: var(--text-light);">Econias E. Nigussie</h1>
             <p class="subtitle">Innovator | Peace Ambassador | Tech Enthusiast</p>
-            
-            <!-- Short Bio -->
+
             <div style="margin-top: 1.5rem; color: var(--text-light);">
                 <p>Graduated high school at Bashewam Secondary School from Addis Ababa, Ethiopia, passionate about technology, peacebuilding, and leadership. Certified in <strong>Data Analytics</strong> and <strong>Web Design</strong>.</p>
                     <p>Participated in diverse team activities, enhancing communication skills and fostering teamwork. Completed multiple online courses, advancing proficiency in HTML/CSS and JavaScript. Developed strong data analytics capabilities through targeted learning initiatives.</p>
@@ -489,7 +464,7 @@ img[src="pro.jpg"] {
                         <span class="skill-tag">Leadership</span>
             </div>
             
-            <!-- Action Buttons -->
+            <!-- Buttons -->
             <div class="buttons" style="margin-top: 1.5rem;">
                 <a href="#projects" class="btn primary-btn">View Projects</a>
                 <a href="#contact" class="btn outline-btn">Contact Me</a>
@@ -498,7 +473,7 @@ img[src="pro.jpg"] {
     </div>
 </header>
 
-    <!-- Experience Section -->
+    <!-- Experience -->
     <section id="experience" class="experience">
         <div class="container">
             <h2 class="section-title">Experience & Activities</h2>
@@ -555,12 +530,12 @@ img[src="pro.jpg"] {
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
             <div class="project-grid">
-                <!-- AI Learning Portal -->
+                
                 <div class="project-card">
                     <div class="project-content">
                         <h3>AI Learning Portal</h3>
@@ -574,7 +549,7 @@ img[src="pro.jpg"] {
                     </div>
                 </div>
                 
-                <!-- Tuseme Research -->
+                
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Women Empowerment Research</h3>
@@ -612,7 +587,7 @@ img[src="pro.jpg"] {
         <div class="container">
             <h2 class="section-title">My Creative Works</h2>
             <div class="canva-grid">
-                <!-- Video Project -->
+                <!-- Video -->
                 <div class="canva-item video-item">
                     <div class="video-wrapper">
                         <iframe width="100%" height="315" src="T.mp4" 
