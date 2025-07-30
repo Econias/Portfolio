@@ -3,7 +3,7 @@
 Welcome to my **personal portfolio website**! This project is designed to showcase my skills, projects, and background in a clean and professional format. The goal of this portfolio is to provide an easy way for recruiters, collaborators, and potential clients to learn more about me.
 
 # Live Demo
-[**View My Portfolio Here**](https://econportfolio.netlify.app/
+[**View My Portfolio Here**]((https://econe.netlify.app/)
 
 # 🖼️ Preview
 <img width="1341" height="597" alt="image" src="https://github.com/user-attachments/assets/25d8bf20-e29a-470b-84ae-56bb7527d75e" />
